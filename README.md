@@ -278,12 +278,6 @@ Tests use synthetic NumPy frames and mocked pyttsx3 — a webcam is **not requir
 
 ---
 
-## License
-
-MIT License — see `LICENSE` for details.
-
----
-
 ## Acknowledgements
 
 - OpenCV community for tracker implementations
