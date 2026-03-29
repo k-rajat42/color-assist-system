@@ -54,9 +54,10 @@ class AppConfig:
     # Format: color_name -> list of (lower, upper) ranges
     # Multiple ranges handle hue wrap-around (e.g., red straddles 0°/180°)
     color_ranges: Dict[str, List[HSVRange]] = field(default_factory=lambda: {
+        # Fix: Red wraps around hue wheel — requires two ranges (Issue #3)
         "Red": [
-            ((0,   90,  60), (10,  255, 255)),
-            ((165, 90,  60), (180, 255, 255)),
+            ((0,   90,  60), (10,  255, 255)),   # lower red
+            ((165, 90,  60), (180, 255, 255)),   # upper red (hue wrap)
         ],
         "Orange": [
             ((11, 100, 100), (24, 255, 255)),
